@@ -1,27 +1,41 @@
 package leetcode
 
 func canIWin(maxChoosableInteger int, desiredTotal int) bool {
-	chosen := make([]bool, maxChoosableInteger)
+	if maxChoosableInteger*(maxChoosableInteger+1)/2 < desiredTotal {
+		return false
+	}
+	var chosen uint32
+	memo = make(map[uint32]bool)
 	return _canIWin(chosen, 0, maxChoosableInteger, desiredTotal)
 }
 
-func _canIWin(chosen []bool, cur, max, desired int) bool {
+var memo map[uint32]bool
+
+func _canIWin(chosen uint32, cur, max, desired int) bool {
+	if v, ok := memo[chosen]; ok {
+		return v
+	}
 	var opWins bool
+	var mask uint32
 	for i := max; i >= 1; i-- {
-		if !chosen[i-1] {
-			chosen[i-1] = true
+		mask = 1 << uint(i-1)
+		if chosen&mask == 0 {
+			chosen |= mask
 			if cur+i >= desired {
-				chosen[i-1] = false
+				chosen &^= mask
+				memo[chosen] = true
 				return true
 			}
 			opWins = _canIWin(chosen, cur+i, max, desired)
 			if opWins {
-				chosen[i-1] = false
+				chosen &^= mask
 			} else {
-				chosen[i-1] = false
+				chosen &^= mask
+				memo[chosen] = true
 				return true
 			}
 		}
 	}
+	memo[chosen] = false
 	return false
 }
