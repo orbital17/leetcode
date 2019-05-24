@@ -5,23 +5,22 @@ func PredictTheWinner(nums []int) bool {
 }
 
 func predictTheWinner(nums []int) int {
-	dp := make([][]int, len(nums))
+	dp := make([]int, len(nums))
 	for i := 0; i < len(nums); i++ {
-		dp[i] = make([]int, len(nums))
-		dp[i][i] = nums[i]
+		dp[i] = nums[i]
 	}
 	for s := len(nums); s >= 0; s-- {
 		for e := s + 1; e < len(nums); e++ {
-			a := nums[s] - dp[s+1][e]
-			b := nums[e] - dp[s][e-1]
+			a := nums[s] - dp[e]
+			b := nums[e] - dp[e-1]
 			if a > b {
-				dp[s][e] = a
+				dp[e] = a
 			} else {
-				dp[s][e] = b
+				dp[e] = b
 			}
 		}
 	}
-	return dp[0][len(nums)-1]
+	return dp[len(nums)-1]
 }
 
 // O(2^n)
