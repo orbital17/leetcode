@@ -33,3 +33,39 @@ func isMatch(s string, p string) bool {
 
 	return dp[0][0]
 }
+
+/*
+abcde ad*e
+
+1 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 1
+
+match i j =
+    p[j] == '.' || s[i] == p[i]
+
+dp i j =
+    if *
+        0
+    if before *
+        d i j+2 || d i+1 j && match pj si
+    if pj is symbol
+        d i+1 j+1 && match pj si
+
+
+ab .*c
+
+0 0 0| 0
+0 0 0  0
+-
+0 0 0  1
+
+
+aa a*
+0 0|0
+0 0 0
+-
+1 1 1
+*/
