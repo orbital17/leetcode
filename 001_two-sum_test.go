@@ -1,8 +1,8 @@
 package leetcode
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 func Test_twoSum(t *testing.T) {

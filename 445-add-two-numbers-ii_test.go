@@ -3,11 +3,11 @@ package leetcode
 import "fmt"
 import "math"
 
-func ExampleAdd() {
+func Example_addTwoNumbers() {
 	a := &ListNode{7,
 		&ListNode{2,
 			&ListNode{4,
-				&ListNode{3,nil},
+				&ListNode{3, nil},
 			},
 		},
 	}
@@ -29,7 +29,7 @@ func f(n int, bits float64) float64 {
 	return 1 - math.Exp(-e)
 }
 
-func ExampleMath() {
+func Example_math() {
 	r := f(8, 72)
 	fmt.Print(r)
 	//Output:

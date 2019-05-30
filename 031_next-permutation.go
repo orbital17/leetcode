@@ -31,5 +31,4 @@ func nextPermutation(nums []int) {
 	if len(nums)-i > 2 {
 		reversePerm(nums, i+1, len(nums)-1)
 	}
-	return
 }

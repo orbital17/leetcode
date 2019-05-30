@@ -2,6 +2,7 @@ package leetcode
 
 import "fmt"
 
+//ListNode - the node in the linked list
 type ListNode struct {
 	Val  int
 	Next *ListNode

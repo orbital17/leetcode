@@ -4,7 +4,7 @@ func longestPalindrome(s string) string {
 	b := []byte(s)
 	var r, max int
 	var maxs []byte
-	for i, _ := range b {
+	for i := range b {
 		r = checkPalindrome(b, i, false)
 		if r > max {
 			max = r

@@ -2,8 +2,8 @@ package leetcode
 
 import "fmt"
 
-func ExampleSort() {
-	a := []int{5,2,3,1}
+func Example_sortArray() {
+	a := []int{5, 2, 3, 1}
 	sortArray(a)
 	fmt.Print(a)
 	//Output:
