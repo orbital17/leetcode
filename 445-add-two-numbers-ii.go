@@ -9,6 +9,9 @@ type ListNode struct {
 }
 
 func (l *ListNode) String() string {
+	if l == nil {
+		return "<nil>"
+	}
 	if l.Next != nil {
 		return fmt.Sprintf("%v -> %v", l.Val, l.Next)
 	}
