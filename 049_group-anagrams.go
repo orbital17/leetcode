@@ -1,14 +1,13 @@
 package leetcode
 
-import "sort"
-
 func groupAnagrams(strs []string) [][]string {
-	dict := map[string]int{}
+	dict := map[[26]uint8]int{}
 	result := [][]string{}
 	for _, v := range strs {
-		bytes := []byte(v)
-		sort.Slice(bytes, func(i, j int) bool { return bytes[i] < bytes[j] })
-		key := string(bytes)
+		key := [26]uint8{}
+		for _, symbol := range v {
+			key[symbol-'a']++
+		}
 		if index, ok := dict[key]; ok {
 			result[index] = append(result[index], v)
 		} else {
