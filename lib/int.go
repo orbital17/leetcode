@@ -1,20 +1,20 @@
 package lib
 
-func max(a, b int) int {
+func Max(a, b int) int {
 	if a > b {
 		return a
 	}
 	return b
 }
 
-func min(a, b int) int {
+func Min(a, b int) int {
 	if a < b {
 		return a
 	}
 	return b
 }
 
-func fill(a []int, v int) {
+func Fill(a []int, v int) {
 	for i := range a {
 		a[i] = v
 	}

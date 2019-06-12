@@ -1,12 +1,12 @@
 package leetcode
 
-type Stack []rune
+type RuneStack []rune
 
-func (s *Stack) push(v rune) {
+func (s *RuneStack) push(v rune) {
 	*s = append(*s, v)
 }
 
-func (s *Stack) pop() (r rune, ok bool) {
+func (s *RuneStack) pop() (r rune, ok bool) {
 	if len(*s) == 0 {
 		return 0, false
 	}
@@ -17,7 +17,7 @@ func (s *Stack) pop() (r rune, ok bool) {
 }
 
 func isValid020(s string) bool {
-	stack := Stack{}
+	stack := RuneStack{}
 	for _, v := range s {
 		switch v {
 		case '(':
