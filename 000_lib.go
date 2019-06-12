@@ -19,3 +19,9 @@ func fill(a []int, v int) {
 		a[i] = v
 	}
 }
+
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
+}
