@@ -1,5 +1,49 @@
 package leetcode
 
+func fill(a []int, v int) {
+	for i := range a {
+		a[i] = v
+	}
+}
+
+func maximalRectangle(matrix [][]byte) int {
+	if len(matrix) == 0 {
+		return 0
+	}
+	var i, j int
+	n, m := len(matrix), len(matrix[0])
+	h := make([]int, m)
+	left := make([]int, m)
+	right := make([]int, m)
+	fill(right, m)
+	var cl, cr, cs, maxs int
+	for i = 0; i < n; i++ {
+		cl = 0
+		for j = 0; j < m; j++ {
+			if matrix[i][j] == '0' {
+				left[j] = 0
+				cl = j + 1
+				h[j] = 0
+			} else {
+				left[j] = max(left[j], cl)
+				h[j]++
+			}
+		}
+		cr = m
+		for j = m - 1; j >= 0; j-- {
+			if matrix[i][j] == '0' {
+				right[j] = m
+				cr = j
+			} else {
+				right[j] = min(right[j], cr)
+				cs = (right[j] - left[j]) * h[j]
+				maxs = max(cs, maxs)
+			}
+		}
+	}
+	return maxs
+}
+
 type List85 struct {
 	next *List85
 	n    byte
