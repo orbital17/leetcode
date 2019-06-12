@@ -1,5 +1,7 @@
 package leetcode
 
+import . "./lib"
+
 func getMoneyAmount(n int) int {
 	dp := make([][]int, n+1)
 	//d[i][j] is result for [i+1, j+1) interval
@@ -12,7 +14,7 @@ func getMoneyAmount(n int) int {
 			j := i + l
 			r := 1<<31 - 1 //max int32
 			for k := i; k < j; k++ {
-				rk := k + 1 + max(dp[i][k], dp[k+1][j])
+				rk := k + 1 + Max(dp[i][k], dp[k+1][j])
 				if rk < r {
 					r = rk
 				}

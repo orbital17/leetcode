@@ -1,5 +1,7 @@
 package leetcode
 
+import . "./lib"
+
 func maximalRectangle(matrix [][]byte) int {
 	if len(matrix) == 0 {
 		return 0
@@ -9,7 +11,7 @@ func maximalRectangle(matrix [][]byte) int {
 	h := make([]int, m)
 	left := make([]int, m)
 	right := make([]int, m)
-	fill(right, m)
+	Fill(right, m)
 	var cl, cr, cs, maxs int
 	for i = 0; i < n; i++ {
 		cl = 0
@@ -19,7 +21,7 @@ func maximalRectangle(matrix [][]byte) int {
 				cl = j + 1
 				h[j] = 0
 			} else {
-				left[j] = max(left[j], cl)
+				left[j] = Max(left[j], cl)
 				h[j]++
 			}
 		}
@@ -29,9 +31,9 @@ func maximalRectangle(matrix [][]byte) int {
 				right[j] = m
 				cr = j
 			} else {
-				right[j] = min(right[j], cr)
+				right[j] = Min(right[j], cr)
 				cs = (right[j] - left[j]) * h[j]
-				maxs = max(cs, maxs)
+				maxs = Max(cs, maxs)
 			}
 		}
 	}

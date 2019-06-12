@@ -1,5 +1,7 @@
 package leetcode
 
+import . "./lib"
+
 func minDistance(a string, b string) int {
 	if len(b) > len(a) {
 		a, b = b, a
@@ -20,7 +22,7 @@ func minDistance(a string, b string) int {
 			if a[i-1] == b[j-1] {
 				dp[j] = prev
 			} else {
-				dp[j] = min(prev, min(cur, dp[j-1])) + 1
+				dp[j] = Min(prev, Min(cur, dp[j-1])) + 1
 			}
 			prev = cur
 		}
