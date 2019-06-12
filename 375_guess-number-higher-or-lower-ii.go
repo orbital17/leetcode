@@ -1,12 +1,5 @@
 package leetcode
 
-func max(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
-}
-
 func getMoneyAmount(n int) int {
 	dp := make([][]int, n+1)
 	//d[i][j] is result for [i+1, j+1) interval

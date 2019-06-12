@@ -1,11 +1,5 @@
 package leetcode
 
-func fill(a []int, v int) {
-	for i := range a {
-		a[i] = v
-	}
-}
-
 func maximalRectangle(matrix [][]byte) int {
 	if len(matrix) == 0 {
 		return 0

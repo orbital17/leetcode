@@ -1,12 +1,5 @@
 package leetcode
 
-func min(a, b int) int {
-	if a < b {
-		return a
-	}
-	return b
-}
-
 func minDistance(a string, b string) int {
 	if len(b) > len(a) {
 		a, b = b, a
