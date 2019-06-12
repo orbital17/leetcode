@@ -1,8 +1,7 @@
 package leetcode
 
-import (
-	"testing"
-)
+import "testing"
+import . "./lib"
 
 func Test_reverseKGroup(t *testing.T) {
 	type args struct {

@@ -1,5 +1,7 @@
 package leetcode
 
+import . "./lib"
+
 /**
  * Definition for singly-linked list.
  * type ListNode struct {

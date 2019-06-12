@@ -1,8 +1,7 @@
 package leetcode
 
-import (
-	"fmt"
-)
+import "fmt"
+import . "./lib"
 
 func newListNode(nums ...int) *ListNode {
 	var current *ListNode

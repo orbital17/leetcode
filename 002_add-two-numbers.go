@@ -1,5 +1,7 @@
 package leetcode
 
+import . "./lib"
+
 func _addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	r1, r2 := l1, l2
 	var prev *ListNode

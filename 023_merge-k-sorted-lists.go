@@ -1,6 +1,7 @@
 package leetcode
 
 import "container/heap"
+import . "./lib"
 
 type heapItem struct {
 	Value int

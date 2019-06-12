@@ -2,6 +2,7 @@ package leetcode
 
 import "fmt"
 import "math"
+import . "./lib"
 
 func Example_addTwoNumbers() {
 	a := &ListNode{7,
