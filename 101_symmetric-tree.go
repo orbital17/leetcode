@@ -2,6 +2,31 @@ package leetcode
 
 import . "./lib"
 
+func isSymmetric(root *TreeNode) bool {
+	if root == nil {
+		return true
+	}
+	var a, b *TreeNode
+	q := Queue{}
+	q.Add(root.Left)
+	q.Add(root.Right)
+	for !q.IsEmpty() {
+		a = q.Poll().(*TreeNode)
+		b = q.Poll().(*TreeNode)
+		if a == nil && b == nil {
+			continue
+		}
+		if a == nil || b == nil || a.Val != b.Val {
+			return false
+		}
+		q.Add(a.Left)
+		q.Add(b.Right)
+		q.Add(b.Left)
+		q.Add(a.Right)
+	}
+	return true
+}
+
 func isSymmetricTraversal(root *TreeNode) bool {
 	if root == nil {
 		return true
