@@ -7,7 +7,7 @@ func isSymmetricTraversal(root *TreeNode) bool {
 		return true
 	}
 	a, b := root.Left, root.Right
-	ls, rs := StackAbstract{}, StackAbstract{}
+	ls, rs := Stack{}, Stack{}
 	for a != nil || b != nil || !ls.IsEmpty() || !rs.IsEmpty() {
 		switch {
 		case a != nil && b != nil:

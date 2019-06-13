@@ -1,17 +1,22 @@
 package lib
 
-type Stack struct {
-	top *ListNode
+type ListNodeAbstract struct {
+	Val  interface{}
+	Next *ListNodeAbstract
 }
 
-func (s *Stack) Push(v int) {
-	s.top = &ListNode{
+type Stack struct {
+	top *ListNodeAbstract
+}
+
+func (s *Stack) Push(v interface{}) {
+	s.top = &ListNodeAbstract{
 		Val:  v,
 		Next: s.top,
 	}
 }
 
-func (s *Stack) Pop() (r int) {
+func (s *Stack) Pop() (r interface{}) {
 	r = s.top.Val
 	s.top = s.top.Next
 	return
