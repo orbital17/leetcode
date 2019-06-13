@@ -1,5 +1,9 @@
 package lib
 
+// type ListNodeAbstract struct {
+// 	Val  interface{}
+// 	Next *ListNodeAbstract
+// }
 type Queue struct {
 	start *ListNodeAbstract
 	end   *ListNodeAbstract
