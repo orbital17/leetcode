@@ -20,9 +20,9 @@ func maxPathSumHelper(node *TreeNode, result *int) int {
 	return Max(node.Val+Max(l, r), 0)
 }
 
-func Max(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
-}
+// func Max(a, b int) int {
+// 	if a > b {
+// 		return a
+// 	}
+// 	return b
+// }
