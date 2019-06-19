@@ -1,6 +1,39 @@
 package leetcode
 
+import . "./lib"
+
 func maxProduct(nums []int) int {
+	if len(nums) == 0 {
+		return 0
+	}
+	res, max, min := nums[0], nums[0], nums[0]
+	for i := 1; i < len(nums); i++ {
+		v := nums[i]
+		if v < 0 {
+			max, min = min, max
+		}
+		max = Max(v, v*max)
+		min = Min(v, v*min)
+		res = Max(res, max)
+	}
+	return res
+}
+
+// func Max(a, b int) int {
+// 	if a > b {
+// 		return a
+// 	}
+// 	return b
+// }
+
+// func Min(a, b int) int {
+// 	if a < b {
+// 		return a
+// 	}
+// 	return b
+// }
+
+func maxProduct_(nums []int) int {
 	if len(nums) == 0 {
 		return 0
 	}
