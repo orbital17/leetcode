@@ -25,3 +25,7 @@ func (s *Stack) Pop() (r interface{}) {
 func (s *Stack) IsEmpty() bool {
 	return s.top == nil
 }
+
+func (s *Stack) Top() interface{} {
+	return s.top.Val
+}
