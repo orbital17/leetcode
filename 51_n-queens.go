@@ -1,7 +1,7 @@
 package leetcode
 
 func solveNQueens(n int) [][]string {
-	data := initData(n)
+	data := solveNQueensInitData(n)
 	cur := make([]int, n)
 	solveNQueensBacktrack(data, cur, 0)
 	return data.res
@@ -13,7 +13,7 @@ type solveNQueensData struct {
 	n           int
 }
 
-func initData(n int) *solveNQueensData {
+func solveNQueensInitData(n int) *solveNQueensData {
 	data := &solveNQueensData{}
 	data.res = make([][]string, 0)
 	data.col = make([]bool, n)
