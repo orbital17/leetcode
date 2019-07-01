@@ -5,7 +5,7 @@ import (
 )
 
 func TestCache(t *testing.T) {
-	cache := Constructor(2)
+	cache := LRUConstructor(2)
 	cache.Put(1, 1)
 	cache.Put(2, 2)
 	cache.Get(1)    // returns 1

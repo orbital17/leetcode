@@ -15,7 +15,7 @@ type LRUCache struct {
 	end   *LRUNode
 }
 
-func Constructor(capacity int) LRUCache {
+func LRUConstructor(capacity int) LRUCache {
 	cache := LRUCache{cap: capacity}
 	cache.hash = make(map[int]*LRUNode)
 	return cache
