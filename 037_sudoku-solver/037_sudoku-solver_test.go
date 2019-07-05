@@ -14,8 +14,19 @@ var board = [][]byte{
 	{'.', '.', '.', '.', '8', '.', '.', '7', '9'},
 }
 
-func Example_isValidSudoku() {
-	fmt.Print(isValidSudoku(board))
+func Example_solveSudoku() {
+	solveSudoku(board)
+	for _, r := range board {
+		fmt.Println(string(r))
+	}
 	//Output:
-	//true
+	// 534678912
+	// 672195348
+	// 198342567
+	// 859761423
+	// 426853791
+	// 713924856
+	// 961537284
+	// 287419635
+	// 345286179
 }
