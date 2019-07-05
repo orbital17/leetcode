@@ -3,20 +3,9 @@ package leetcode
 import "fmt"
 import . "../lib"
 
-func newListNode(nums ...int) *ListNode {
-	var current *ListNode
-	for i := len(nums) - 1; i >= 0; i-- {
-		current = &ListNode{
-			nums[i],
-			current,
-		}
-	}
-	return current
-}
-
 func Example_mergeKLists() {
 	lists := []*ListNode{
-		newListNode(1, 4, 5),
+		NewListNode(1, 4, 5),
 	}
 	actual := mergeKLists(lists)
 	fmt.Print(actual)
@@ -26,9 +15,9 @@ func Example_mergeKLists() {
 
 func Example_mergeKLists2() {
 	lists := []*ListNode{
-		newListNode(1, 4, 5),
-		newListNode(1, 3, 4),
-		newListNode(2, 6),
+		NewListNode(1, 4, 5),
+		NewListNode(1, 3, 4),
+		NewListNode(2, 6),
 	}
 	actual := mergeKLists(lists)
 	fmt.Print(actual)

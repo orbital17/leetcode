@@ -14,10 +14,10 @@ func Test_isPalindrome(t *testing.T) {
 		head *ListNode
 		want bool
 	}{
-		{"t", newListNode(1, 2), false},
-		{"t", newListNode(1, 1), true},
-		{"t", newListNode(1, 1, 2), false},
-		{"t", newListNode(3, 1, 2, 1, 3), true},
+		{"t", NewListNode(1, 2), false},
+		{"t", NewListNode(1, 1), true},
+		{"t", NewListNode(1, 1, 2), false},
+		{"t", NewListNode(3, 1, 2, 1, 3), true},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
