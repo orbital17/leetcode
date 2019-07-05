@@ -6,17 +6,21 @@ import (
 	"os"
 )
 
-func calcSolved() int {
-	files, _ := ioutil.ReadDir("..")
-	dict := make(map[string]bool)
-	for _, file := range files {
-		if file.IsDir() {
-			continue
-		}
-		k := file.Name()[:3]
-		dict[k] = true
+func NewProblem(name string) (err error) {
+	err = os.MkdirAll(name, 0755)
+	if err != nil {
+		return
 	}
-	return len(dict)
+	f, err := os.Create(fmt.Sprintf("%s/%s.go", name, name))
+	if err != nil {
+		return
+	}
+	defer f.Close()
+	_, err = f.WriteString("package leetcode\n")
+	if err != nil {
+		return
+	}
+	return
 }
 
 func Refactor() error {
