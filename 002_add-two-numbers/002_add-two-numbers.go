@@ -18,7 +18,7 @@ func _addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 		}
 		prev = &ListNode{sum % 10, prev}
 	}
-	res := reverse(prev)
+	res := _reverse(prev)
 	return res
 }
 
