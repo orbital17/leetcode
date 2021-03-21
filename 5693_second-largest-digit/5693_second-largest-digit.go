@@ -1,9 +1,21 @@
 package leetcode
 
-// import "github.com/emirpasic/gods/sets/treeset"
+import "github.com/emirpasic/gods/sets/treeset"
 
 func secondHighest(s string) int {
-	return 0
+	set := treeset.NewWithIntComparator()
+	for _, i := range s {
+		if i >= '0' && i <= '9' {
+			set.Add(int(i - '0'))
+		}
+	}
+	if set.Size() < 2 {
+		return -1
+	}
+	it := set.Iterator()
+	it.Last()
+	it.Prev()
+	return it.Value().(int)
 }
 
 func secondHighest_old(s string) int {

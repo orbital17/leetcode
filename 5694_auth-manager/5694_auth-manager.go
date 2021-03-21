@@ -1,8 +1,8 @@
 package leetcode
 
 type AuthenticationManager struct {
-	ttl    int
-	tokens map[string]int
+	ttl int
+	hm  map[string]int
 }
 
 func Constructor(timeToLive int) AuthenticationManager {
@@ -13,19 +13,19 @@ func Constructor(timeToLive int) AuthenticationManager {
 }
 
 func (this *AuthenticationManager) Generate(tokenId string, currentTime int) {
-	this.tokens[tokenId] = currentTime + this.ttl
+	this.hm[tokenId] = currentTime + this.ttl
 }
 
 func (this *AuthenticationManager) Renew(tokenId string, currentTime int) {
-	if currentTime >= this.tokens[tokenId] {
+	if currentTime >= this.hm[tokenId] {
 		return
 	}
-	this.tokens[tokenId] = currentTime + this.ttl
+	this.hm[tokenId] = currentTime + this.ttl
 }
 
 func (this *AuthenticationManager) CountUnexpiredTokens(currentTime int) int {
 	var count int
-	for _, time := range this.tokens {
+	for _, time := range this.hm {
 		if currentTime < time {
 			count++
 		}
