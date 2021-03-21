@@ -1,7 +1,10 @@
 package leetcode
 
-import "fmt"
-import . "../lib"
+import (
+	"fmt"
+
+	. "github.com/orbital17/leetcode/lib"
+)
 
 func Example_mergeKLists() {
 	lists := []*ListNode{

@@ -1,6 +1,6 @@
 package leetcode
 
-import . "../lib"
+import . "github.com/orbital17/leetcode/lib"
 
 /**
  * Definition for singly-linked list.
@@ -10,7 +10,7 @@ import . "../lib"
  * }
  */
 func removeNthFromEnd(head *ListNode, n int) *ListNode {
-	dummy := &ListNode{0, head}
+	dummy := &ListNode{Val: 0, Next: head}
 	cur, beforeRemove := dummy, dummy
 	dist := 0
 	for cur != nil {

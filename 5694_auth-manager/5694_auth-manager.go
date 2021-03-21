@@ -1,4 +1,4 @@
-package leetcode
+package auth_manager
 
 type AuthenticationManager struct {
 	ttl int

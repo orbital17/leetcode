@@ -1,6 +1,8 @@
 package leetcode
 
-import . "../lib"
+import (
+	. "github.com/orbital17/leetcode/lib"
+)
 
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	r1, r2 := l1, l2
@@ -15,7 +17,7 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 			sum += r2.Val
 			r2 = r2.Next
 		}
-		prev = &ListNode{sum % 10, prev}
+		prev = &ListNode{Val: sum % 10, Next: prev}
 		sum = sum / 10
 	}
 	res := _reverse(prev)

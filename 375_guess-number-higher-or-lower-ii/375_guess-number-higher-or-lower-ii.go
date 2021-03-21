@@ -1,6 +1,6 @@
 package leetcode
 
-import . "../lib"
+import . "github.com/orbital17/leetcode/lib"
 
 func getMoneyAmount(n int) int {
 	dp := make([][]int, n+1)

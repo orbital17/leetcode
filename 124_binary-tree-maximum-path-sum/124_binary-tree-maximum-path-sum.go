@@ -1,6 +1,6 @@
 package leetcode
 
-import . "../lib"
+import . "github.com/orbital17/leetcode/lib"
 
 func maxPathSum(root *TreeNode) int {
 	result := root.Val

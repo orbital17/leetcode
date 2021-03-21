@@ -3,7 +3,7 @@ package leetcode
 import (
 	"testing"
 
-	. "../lib"
+	. "github.com/orbital17/leetcode/lib"
 )
 
 func Test_isPalindrome(t *testing.T) {

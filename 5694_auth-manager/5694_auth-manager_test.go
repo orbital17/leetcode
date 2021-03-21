@@ -1,4 +1,4 @@
-package leetcode
+package auth_manager
 
 import "testing"
 

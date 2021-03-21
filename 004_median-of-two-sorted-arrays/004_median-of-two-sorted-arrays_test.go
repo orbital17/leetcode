@@ -8,5 +8,5 @@ func Example_findMedianSortedArrays() {
 	res := findMedianSortedArrays(a1, a2)
 	fmt.Print(res)
 	//Output:
-	// steps
+	// 3
 }

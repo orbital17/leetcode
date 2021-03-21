@@ -1,6 +1,6 @@
 package leetcode
 
-import . "../lib"
+import . "github.com/orbital17/leetcode/lib"
 
 func reverseList_(l *ListNode) *ListNode {
 	var prev, next *ListNode

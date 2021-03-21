@@ -1,8 +1,10 @@
 package leetcode
 
-import . "../lib"
+import (
+	"container/list"
 
-import "container/list"
+	. "github.com/orbital17/leetcode/lib"
+)
 
 type LCAState int
 

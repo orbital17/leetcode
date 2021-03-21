@@ -1,6 +1,6 @@
 package leetcode
 
-import . "../lib"
+import . "github.com/orbital17/leetcode/lib"
 
 func minDistance(a string, b string) int {
 	if len(b) > len(a) {

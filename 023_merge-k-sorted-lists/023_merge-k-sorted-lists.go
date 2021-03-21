@@ -1,7 +1,10 @@
 package leetcode
 
-import "container/heap"
-import . "../lib"
+import (
+	"container/heap"
+
+	. "github.com/orbital17/leetcode/lib"
+)
 
 type heapItem struct {
 	Value int

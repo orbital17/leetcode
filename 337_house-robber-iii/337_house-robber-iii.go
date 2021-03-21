@@ -1,6 +1,6 @@
 package leetcode
 
-import . "../lib"
+import . "github.com/orbital17/leetcode/lib"
 
 func rob(root *TreeNode) int {
 	return max(recHelper(root))

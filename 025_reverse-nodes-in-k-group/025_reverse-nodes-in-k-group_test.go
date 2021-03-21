@@ -1,7 +1,10 @@
 package leetcode
 
-import "testing"
-import . "../lib"
+import (
+	"testing"
+
+	. "github.com/orbital17/leetcode/lib"
+)
 
 func Test_reverseKGroup(t *testing.T) {
 	type args struct {
@@ -13,14 +16,14 @@ func Test_reverseKGroup(t *testing.T) {
 		args args
 		want *ListNode
 	}{
-		{"basic", args{newListNode(1, 4, 5), 2}, newListNode(4, 1, 5)},
-		{"basic", args{newListNode(1, 4, 5, 6), 3}, newListNode(5, 4, 1, 6)},
-		{"basic", args{newListNode(1, 4, 5, 6, 7), 3}, newListNode(5, 4, 1, 6, 7)},
-		{"basic", args{newListNode(1, 4, 5, 6), 5}, newListNode(1, 4, 5, 6)},
-		{"basic", args{newListNode(1, 4, 5, 6, 7), 5}, newListNode(7, 6, 5, 4, 1)},
-		{"basic", args{newListNode(1, 4, 5, 6, 7, 1, 4, 5, 6, 7), 5}, newListNode(7, 6, 5, 4, 1, 7, 6, 5, 4, 1)},
-		{"basic", args{newListNode(1, 4, 5, 6, 7), 2}, newListNode(4, 1, 6, 5, 7)},
-		{"basic", args{newListNode(1, 4, 5, 6, 7), 3}, newListNode(5, 4, 1, 6, 7)},
+		{"basic", args{NewListNode(1, 4, 5), 2}, NewListNode(4, 1, 5)},
+		{"basic", args{NewListNode(1, 4, 5, 6), 3}, NewListNode(5, 4, 1, 6)},
+		{"basic", args{NewListNode(1, 4, 5, 6, 7), 3}, NewListNode(5, 4, 1, 6, 7)},
+		{"basic", args{NewListNode(1, 4, 5, 6), 5}, NewListNode(1, 4, 5, 6)},
+		{"basic", args{NewListNode(1, 4, 5, 6, 7), 5}, NewListNode(7, 6, 5, 4, 1)},
+		{"basic", args{NewListNode(1, 4, 5, 6, 7, 1, 4, 5, 6, 7), 5}, NewListNode(7, 6, 5, 4, 1, 7, 6, 5, 4, 1)},
+		{"basic", args{NewListNode(1, 4, 5, 6, 7), 2}, NewListNode(4, 1, 6, 5, 7)},
+		{"basic", args{NewListNode(1, 4, 5, 6, 7), 3}, NewListNode(5, 4, 1, 6, 7)},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

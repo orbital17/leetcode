@@ -1,6 +1,6 @@
 package leetcode
 
-import . "../lib"
+import . "github.com/orbital17/leetcode/lib"
 
 func getIntersectionNode(headA, headB *ListNode) *ListNode {
 	if headA == nil || headB == nil {

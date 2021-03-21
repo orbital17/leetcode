@@ -1,6 +1,6 @@
 package leetcode
 
-import . "../lib"
+import . "github.com/orbital17/leetcode/lib"
 
 func sortList(head *ListNode) *ListNode {
 	if head == nil || head.Next == nil {
